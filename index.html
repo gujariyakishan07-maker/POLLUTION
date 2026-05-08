@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pollution Awareness</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:url('https://images.unsplash.com/photo-1513828583688-c52646db42da') no-repeat center center/cover;
+    color:white;
+    min-height:100vh;
+}
+
+/* Dark Overlay */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    z-index:-1;
+}
+
+/* Header */
+header{
+    background:rgba(46,139,87,0.9);
+    text-align:center;
+    padding:20px;
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/* Navbar */
+nav{
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    padding:15px 25px;
+    text-decoration:none;
+    transition:0.4s;
+    cursor:pointer;
+}
+
+nav a:hover{
+    background:#2e8b57;
+}
+
+/* Sections */
+.section{
+    display:none;
+    padding:40px 20px;
+    text-align:center;
+    animation:fade 0.8s;
+}
+
+.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Cards */
+.card{
+    display:inline-block;
+    width:260px;
+    margin:15px;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.9);
+    color:black;
+    transition:0.4s;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    line-height:1.6;
+}
+
+.card:hover{
+    background:#2e8b57;
+    color:white;
+    transform:scale(1.08);
+}
+
+/* Images */
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    margin-top:30px;
+}
+
+.gallery img{
+    width:280px;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.5s;
+    border:4px solid white;
+}
+
+.gallery img:hover{
+    transform:scale(1.08);
+}
+
+/* Form */
+input, textarea{
+    width:80%;
+    max-width:500px;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    background:#2e8b57;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:limegreen;
+}
+
+.info{
+    max-width:800px;
+    margin:auto;
+    line-height:1.9;
+    font-size:18px;
+}
+
+@media(max-width:768px){
+
+    header{
+        font-size:20px;
+    }
+
+    nav a{
+        padding:12px;
+        font-size:14px;
+    }
+
+    .card{
+        width:90%;
+    }
+
+    .gallery img{
+        width:90%;
+        height:auto;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+🌍 Pollution Awareness
+</header>
+
+<!-- Navbar -->
+<nav>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('types')">Types</a>
+<a onclick="showPage('effects')">Effects</a>
+<a onclick="showPage('solutions')">Solutions</a>
+<a onclick="showPage('contact')">Contact</a>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="section active">
+
+<h1>Welcome to Pollution Awareness</h1>
+
+<br><br>
+
+<p class="info">
+
+Pollution is a major environmental problem caused by harmful substances in air, water, and soil. 
+It mainly occurs due to industries, vehicles, smoke, and plastic waste.
+
+Air pollution affects breathing and health.
+Water pollution harms aquatic life.
+Soil pollution reduces land fertility.
+
+We must protect nature by planting trees, saving water, and reducing plastic use.
+
+</p>
+
+</div>
+
+<!-- TYPES -->
+<div id="types" class="section">
+
+<h1>Types of Pollution</h1>
+
+<br><br>
+
+<div class="card" onclick="showPage('air')">
+🌫️ Air Pollution
+</div>
+
+<div class="card" onclick="showPage('water')">
+💧 Water Pollution
+</div>
+
+<div class="card" onclick="showPage('soil')">
+🌱 Soil Pollution
+</div>
+
+<div class="card" onclick="showPage('noise')">
+🔊 Noise Pollution
+</div>
+
+</div>
+
+<!-- AIR -->
+<div id="air" class="section">
+
+<h1>🌫️ Air Pollution</h1>
+
+<br><br>
+
+<p class="info">
+
+Air pollution is caused by harmful smoke, gases, and dust in the air.
+It mainly comes from vehicles, factories, and burning fuels.
+Air pollution affects human health and causes breathing problems.
+It also damages plants, animals, and the environment.
+
+</p>
+
+<br><br>
+
+<img src="https://cdn.pixabay.com/photo/2023/04/22/11/12/environment-7943580_1280.jpg"
+style="width:350px; border-radius:20px; border:5px solid white;">
+
+</div>
+
+<!-- WATER -->
+<div id="water" class="section">
+
+<h1>💧 Water Pollution</h1>
+
+<br><br>
+
+<p class="info">
+
+Water pollution happens when harmful chemicals and waste mix with rivers, lakes, and oceans.
+Factories and plastic waste are major causes of water pollution.
+Dirty water harms fish and other aquatic animals.
+It also spreads diseases and makes water unsafe for drinking.
+
+</p>
+
+<br><br>
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop"
+style="width:350px; border-radius:20px; border:5px solid white;">
+
+</div>
+
+<!-- SOIL -->
+<div id="soil" class="section">
+
+<h1>🌱 Soil Pollution</h1>
+
+<br><br>
+
+<p class="info">
+
+Soil pollution is caused by chemicals, plastic waste, and pesticides.
+It reduces the fertility of land and affects farming.
+Polluted soil can harm plants and animals living in it.
+Keeping the environment clean helps protect the soil.
+
+</p>
+
+<br><br>
+
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
+style="width:350px; border-radius:20px; border:5px solid white;">
+
+</div>
+
+<!-- NOISE -->
+<div id="noise" class="section">
+
+<h1>🔊 Noise Pollution</h1>
+
+<br><br>
+
+<p class="info">
+
+Noise pollution is caused by loud vehicles, factories, and speakers.
+Too much noise can create stress and hearing problems.
+It disturbs people, animals, and daily life activities.
+Reducing unnecessary noise helps create a peaceful environment.
+
+</p>
+
+<br><br>
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+style="width:350px; border-radius:20px; border:5px solid white;">
+
+</div>
+
+<!-- EFFECTS -->
+<div id="effects" class="section">
+
+<h1>Effects of Pollution</h1>
+
+<br>
+
+<p style="font-size:20px;">
+Pollution causes serious damage to health, wildlife, and environment.
+</p>
+
+<br>
+
+<input type="file" multiple accept="image/*" onchange="previewMultiple(event)">
+
+<div id="gallery" class="gallery">
+
+<img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</div>
+
+<!-- SOLUTIONS -->
+<div id="solutions" class="section">
+
+<h1>🌍 Pollution Solutions</h1>
+
+<br><br>
+
+<p class="info">
+
+There are many ways to reduce pollution and protect our environment.
+Everyone should help keep nature clean and safe for future generations.
+
+</p>
+
+<br><br>
+
+<div class="gallery">
+
+<div class="card">
+🌳 Plant More Trees
+<br><br>
+Trees clean the air and give us oxygen.
+</div>
+
+<div class="card">
+♻️ Reduce Plastic Use
+<br><br>
+Avoid plastic bags and bottles to reduce waste.
+</div>
+
+<div class="card">
+🚲 Use Public Transport
+<br><br>
+Using buses and bicycles reduces air pollution.
+</div>
+
+<div class="card">
+💧 Save Water
+<br><br>
+Do not waste water and keep rivers clean.
+</div>
+
+<div class="card">
+🔋 Save Electricity
+<br><br>
+Turn off lights and fans when not needed.
+</div>
+
+<div class="card">
+🏭 Control Factory Smoke
+<br><br>
+Factories should use pollution control systems.
+</div>
+
+<div class="card">
+🚯 Do Not Litter
+<br><br>
+Throw garbage in dustbins and keep surroundings clean.
+</div>
+
+<div class="card">
+🌞 Use Solar Energy
+<br><br>
+Solar power is clean and eco-friendly.
+</div>
+
+<div class="card">
+🌊 Keep Water Bodies Clean
+<br><br>
+Do not dump waste into rivers and lakes.
+</div>
+
+<div class="card">
+📢 Spread Awareness
+<br><br>
+Teach people about protecting the environment.
+</div>
+
+<div class="card">
+🚗 Use Electric Vehicles
+<br><br>
+Electric vehicles produce less pollution.
+</div>
+
+<div class="card">
+🌿 Recycle Waste
+<br><br>
+Recycling helps reduce garbage and pollution.
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+
+<h1>Contact Us</h1>
+
+<br><br>
+
+<input type="text" placeholder="Your Name">
+
+<br>
+
+<input type="email" placeholder="Your Email">
+
+<br>
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<br>
+
+<button>Send Message</button>
+
+</div>
+
+<script>
+
+/* Navigation */
+function showPage(pageId){
+
+    let sections=document.querySelectorAll('.section');
+
+    sections.forEach(section=>{
+        section.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+}
+
+/* Multiple Image Preview */
+function previewMultiple(event){
+
+    let gallery=document.getElementById("gallery");
+
+    for(let file of event.target.files){
+
+        let reader=new FileReader();
+
+        reader.onload=function(e){
+
+            let img=document.createElement("img");
+
+            img.src=e.target.result;
+
+            gallery.appendChild(img);
+        }
+
+        reader.readAsDataURL(file);
+    }
+}
+
+</script>
+
+</body>
+</html>
